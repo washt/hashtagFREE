@@ -7,6 +7,7 @@
     "body-parser": "~1.14",
     "ejs": "~2.4",
     "mongodb": "~2.1",
+    "request": "~2.69",
     "underscore": "~1.6"
   }
 }

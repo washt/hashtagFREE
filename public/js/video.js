@@ -1,5 +1,8 @@
 $(function () {
   var vid = document.getElementById("bgvid");
+  if (!vid) {
+    return;
+  };
 
   function vidFade() {
     vid.classList.add("stopfade");
