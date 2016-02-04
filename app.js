@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var mongodb = require('mongodb');
+var bodyParser = require('body-parser');
 var MongoClient = mongodb.MongoClient;
 var password = process.env.MONGO_PASSWORD;
 var mongoUrl = 'mongodb://hacku:' + password + '@ds055525.mongolab.com:55525/hacku2016-freehash';
@@ -12,13 +13,12 @@ MongoClient.connect(mongoUrl, function(err, db) {
   var events = db.collection('events');
   
   app.set('view engine', 'ejs');
+  app.use(bodyParser.urlencoded({ extended: false })); 
 
   app.get('/', function (req, res) {
-    events.insert({name: 'Pizza!!!'}, function() {
       events.find({}).toArray(function(err, events) {
         res.render('index', {events: events});
       });
-    });
   });
 
   app.get('/reset', function (req, res) {
@@ -26,6 +26,12 @@ MongoClient.connect(mongoUrl, function(err, db) {
 	      if (err) throw err;
 	      res.send("db cleared");
       });
+  });
+  
+  app.post('/createEvent', function (req, res) {
+      events.insert(req.body, function() {
+	     res.send("event posted");
+    });
   });
 
   app.use(express.static('public'));
