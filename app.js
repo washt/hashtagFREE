@@ -12,7 +12,12 @@ MongoClient.connect(mongoUrl, function(err, db) {
   app.set('view engine', 'ejs');
 
   app.get('/', function (req, res) {
-    res.render('index');
+    var events = db.collection('events');
+    events.insert({name: 'Pizza!!!'}, function() {
+      events.find({}).toArray(function(err, events) {
+        res.render('index', {events: events});
+      });
+    });
   });
 
   app.use(express.static('public'));
