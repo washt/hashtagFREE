@@ -16,13 +16,13 @@ MongoClient.connect(mongoUrl, function(err, db) {
   app.use(bodyParser.urlencoded({ extended: false }));
 
   app.get('/', function (req, res) {
-      events.find({}).toArray(function(err, events) {
-        res.render('layout', {events: events});
-      });
+    res.render('index');
   });
 
   app.get('/map', function (req, res) {
-    res.render('map');
+    events.find({}).toArray(function(err, events) {
+      res.render('map', {events: events});
+    });
   });
 
   app.get('/reset', function (req, res) {
