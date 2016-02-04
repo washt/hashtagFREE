@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function() {
   mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zaHVhamhhcnJpcyIsImEiOiJjaWs4aXY4OTUwMnM4dTNrdzc0NDI3Mm1yIn0.2qKe8jSYKFlGRiApo2ZiVw';
   var map = new mapboxgl.Map({

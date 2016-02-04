@@ -21,6 +21,10 @@ MongoClient.connect(mongoUrl, function(err, db) {
       });
   });
 
+  app.get('/map', function (req, res) {
+    res.render('map');
+  });
+
   app.get('/reset', function (req, res) {
       events.deleteMany({},function (err,result){
 	      if (err) throw err;
