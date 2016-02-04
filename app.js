@@ -9,15 +9,23 @@ MongoClient.connect(mongoUrl, function(err, db) {
     throw err;
   }
 
+  var events = db.collection('events');
+  
   app.set('view engine', 'ejs');
 
   app.get('/', function (req, res) {
-    var events = db.collection('events');
     events.insert({name: 'Pizza!!!'}, function() {
       events.find({}).toArray(function(err, events) {
         res.render('index', {events: events});
       });
     });
+  });
+
+  app.get('/reset', function (req, res) {
+      events.deleteMany({},function (err,result){
+	      if (err) throw err;
+	      res.send("db cleared");
+      });
   });
 
   app.use(express.static('public'));
