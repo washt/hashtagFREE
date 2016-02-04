@@ -1,0 +1,11 @@
+{
+  "name": "hashtagFree",
+  "description": "FREE PIZZA!!!",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "~4.12",
+    "body-parser": "~1.14",
+    "ejs": "~2.4",
+    "underscore": "~1.6"
+  }
+}
