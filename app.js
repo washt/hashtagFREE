@@ -11,14 +11,18 @@ MongoClient.connect(mongoUrl, function(err, db) {
   }
 
   var events = db.collection('events');
-  
+
   app.set('view engine', 'ejs');
-  app.use(bodyParser.urlencoded({ extended: false })); 
+  app.use(bodyParser.urlencoded({ extended: false }));
 
   app.get('/', function (req, res) {
       events.find({}).toArray(function(err, events) {
         res.render('index', {events: events});
       });
+  });
+
+  app.get('/map', function (req, res) {
+    res.render('map');
   });
 
   app.get('/reset', function (req, res) {
@@ -27,7 +31,7 @@ MongoClient.connect(mongoUrl, function(err, db) {
 	      res.send("db cleared");
       });
   });
-  
+
   app.post('/createEvent', function (req, res) {
       events.insert(req.body, function() {
 	     res.send("event posted");
