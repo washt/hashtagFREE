@@ -8,7 +8,7 @@ $(function (){
                  description: $("#description").val(),
       		 datetime: $("#datetime").val(),
            	 location: $("#location").val(),
-      		 tags: $("#tags").val(),
+      		 tags: $("#tags").val().split(','),
 	      }
          success:function (data) {console.log(data)},
       });
