@@ -1,4 +1,7 @@
-$(function () {
+$(document).ready(function() {
+  if ($('#bgvid').length === 0) {
+    return;
+  }
   var vid = document.getElementById("bgvid");
 
   function vidFade() {
