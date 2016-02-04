@@ -17,7 +17,7 @@ MongoClient.connect(mongoUrl, function(err, db) {
 
   app.get('/', function (req, res) {
       events.find({}).toArray(function(err, events) {
-        res.render('index', {events: events});
+        res.render('layout', {events: events});
       });
   });
 
