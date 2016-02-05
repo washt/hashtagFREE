@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var MongoClient = mongodb.MongoClient;
 var password = process.env.MONGO_PASSWORD;
 var mongoUrl = 'mongodb://hacku:' + password + '@ds055525.mongolab.com:55525/hacku2016-freehash';
+app.locals._ = require('underscore');
 MongoClient.connect(mongoUrl, function(err, db) {
   if (err) {
     throw err;
@@ -14,6 +15,7 @@ MongoClient.connect(mongoUrl, function(err, db) {
 
   app.set('view engine', 'ejs');
   app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.json());
 
   app.get('/', function (req, res) {
     res.render('index');
@@ -33,8 +35,9 @@ MongoClient.connect(mongoUrl, function(err, db) {
   });
 
   app.post('/createEvent', function (req, res) {
-      events.insert(req.body, function() {
-	     res.send("event posted");
+    events.insert(req.body, function(err) {
+      if(err) {res.send(err);}
+     res.send("event posted");
     });
   });
 
