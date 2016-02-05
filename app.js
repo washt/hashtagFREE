@@ -34,6 +34,10 @@ MongoClient.connect(mongoUrl, function(err, db) {
       });
   });
 
+  app.get('/event', function (req, res) {
+	  res.render('form');
+  });
+
   app.post('/createEvent', function (req, res) {
     events.insert(req.body, function(err) {
       if(err) {res.send(err);}
