@@ -3,6 +3,21 @@ $(document).ready(function() {
     return;
   }
 
+  var mapStyle = 0;
+	//
+	$("#map_button").click(function(){
+		if ( mapStyle == 0 ) {
+      $('.main_div').hide(1000);
+			$("#map").animate({opacity: 1});
+			mapStyle = 1;
+		} else {
+      $('.main_div').show(1000);
+			$("#map").animate({opacity: 0});
+			mapStyle = 0;
+		}
+	});
+
+
   mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zaHVhamhhcnJpcyIsImEiOiJjaWs4aXY4OTUwMnM4dTNrdzc0NDI3Mm1yIn0.2qKe8jSYKFlGRiApo2ZiVw';
   // var map = new mapboxgl.Map({
   //     container: 'map', // container id

@@ -1,7 +1,33 @@
 <html>
-  <%- include partials/head %>
+<%- include partials/head %>
 
   <body>
-    <%- include partials/splash %>
+    <!-- ==============================================
+	PRELOADER
+	=============================================== -->
+    <div id="preloader">
+      <ul id="loader">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <!-- End Preloader -->
+
+    <!-- ==============================================
+	IMAGE REPLACEMENT IN MOBILE AND TABLETS DEVICES
+	=============================================== -->
+    <div id="bgimg"></div>
+
+    <%- include partials/header.ejs %>
+
+    <%- include partials/map %>
+
+    <%- include partials/content.ejs %>
+
+    <%- include partials/nav.ejs %>
+
+    <%- include partials/scripts %>
   </body>
+
 </html>

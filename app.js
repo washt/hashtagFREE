@@ -22,7 +22,9 @@ MongoClient.connect(mongoUrl, function(err, db) {
   app.use(bodyParser.json());
 
   app.get('/', function (req, res) {
-    res.render('index');
+    events.find({}).toArray(function(err, events) {
+      res.render('index', {events: events});
+    });
   });
 
   app.get('/map', function (req, res) {
