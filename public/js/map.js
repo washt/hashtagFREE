@@ -4,7 +4,7 @@ $(document).ready(function() {
   }
 
   var mapStyle = 0;
-  
+
 	$("#map_button").click(function(){
 		if ( mapStyle == 0 ) {
       $('.main_div').hide(1000);
@@ -67,7 +67,7 @@ var features = [];
       // style: 'mapbox://styles/mapbox/streets-v8',
       style: 'mapbox://styles/joshuajharris/cik91dyhk000f9fm1aogokton',
       // center: [-77.020945, 38.878241],
-      center: [-77.03238901390978, 38.913188059745586],
+      center: [-76.305396,36.886563],
       zoom: 18, // starting zoom
       pitch: 60
   });

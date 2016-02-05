@@ -33,23 +33,18 @@ MongoClient.connect(mongoUrl, function(err, db) {
     });
   });
 
-  app.get('/reset', function (req, res) {
-    events.deleteMany({},function (err,result){
-      if (err) throw err;
-      res.send("db cleared");
-    });
-  });
-
   app.get('/event', function (req, res) {
 	  res.render('form');
   });
 
   app.post('/createEvent', function (req, res) {
-    events.insert(req.body, function(err) {
+    var event = req.body;
+    event.location = buildingToCoords(event.location);
+    events.insert(event, function(err) {
       if(err) {
         res.send(err);
       }
-
+      notify();
       res.send("event posted");
     });
   });
@@ -96,16 +91,16 @@ MongoClient.connect(mongoUrl, function(err, db) {
   function buildingToCoords(buildingName) {
     var buildings = {
       'dragas' : {
-        lat: 36.887468,
-        long:-76.303726
+        long: 36.887468,
+        lat:-76.303726
       },
       'webb' : {
-        lat: 36.886534,
-        long: -76.306525
+        long: 36.886534,
+        lat: -76.306525
       },
       'kaufman' : {
-        lat: 36.885824,
-        long: -76.305077
+        long: 36.885824,
+        lat: -76.305077
       }
     };
 
