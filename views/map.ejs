@@ -1,32 +1,28 @@
 <html>
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-    <script src="/js/jquery-1.12.0.min.js"></script>
-	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.13.1/mapbox-gl.js'></script>
-	<script src='/js/map.js'></script>
-	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.13.1/mapbox-gl.css' rel='stylesheet' />
-	<style>
-		body {emargin:0; padding:0; }
-		#map { position:absolute; top:0; bottom:0; width:100%; }
-            .layer1 {position:relative; z-index: 2;}
+<%- include partials/head %>
 
-	</style>
-</head>
-
-<body>
-  <div id="map"></div>
-  <div class="container">
-      <div class="row">
-          <div class="card col-md-4">
-              <img class="card-img-top" src="/images/pizza.png" style="width: 100%;" alt="Card image cap">
-              <div class="card-block">
-                  <h4 class="card-title">Card title</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Button</a>
-              </div>
-          </div>
+  <body>
+    <div id="events" hidden></div>
+    <div id="map"></div>
+    <!-- <div class="card-container">
+      <div class="container-img">
+        <img src="/images/pizza.svg">
       </div>
-  </div>
 
-</body>
+      <div class="arrow_box container" id="info">
+        <h1>Title</h1>
+        <ul class="list-unstyled">
+          <li>
+            <span class="glyphicon glyphicon-time"></span> Time
+          </li>
+          <li>
+            <span class="glyphicon glyphicon-map-marker"></span> Location
+          </li>
+          <p>Description</p>
+          <button class="btn btn-default" id="hashtag" type="submit">#tags</button>
+      </div>
+    </div> -->
+
+  </body>
+
 </html>
