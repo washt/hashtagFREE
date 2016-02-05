@@ -30,7 +30,7 @@ $(function() {
         location: $("#eventLocation").val()
       },
       success: function(data) {
-        console.log(data)
+        location.reload();
       }
     });
   });

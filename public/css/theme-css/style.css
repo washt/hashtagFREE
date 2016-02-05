@@ -476,11 +476,11 @@ body {
 }
 
 .map_button:before {
-    content: "MAP";
+    content: "FIND";
 }
 
 .menu_button:before {
-    content: "MENU";
+    content: "GIVE";
 }
 
 #map{
