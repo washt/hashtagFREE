@@ -4,7 +4,7 @@ $(document).ready(function() {
   }
 
   var mapStyle = 0;
-	//
+  
 	$("#map_button").click(function(){
 		if ( mapStyle == 0 ) {
       $('.main_div').hide(1000);
