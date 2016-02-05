@@ -264,7 +264,7 @@ button[type="submit"]{
 }
 
 .poster-image {
-	background: url('https://placehold.it/1280x720');
+	background: url('/vids/preview.png');
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	   -moz-background-size: cover;

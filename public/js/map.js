@@ -95,7 +95,7 @@ var features = [];
   // When a click event occurs near a marker icon, open a popup at the location of
   // the feature, with description HTML from its properties.
   map.on('click', function (e) {
-      map.featuresAt(e.point, {layer: 'markers', radius: 10, includeGeometry: true}, function (err, features) {
+      map.featuresAt(e.point, {layer: 'markers', radius: 50, includeGeometry: true}, function (err, features) {
           if (err || !features.length)
               return;
 
@@ -111,7 +111,7 @@ var features = [];
   // Use the same approach as above to indicate that the symbols are clickable
   // by changing the cursor style to 'pointer'.
   map.on('mousemove', function (e) {
-      map.featuresAt(e.point, {layer: 'markers', radius: 10}, function (err, features) {
+      map.featuresAt(e.point, {layer: 'markers', radius: 50}, function (err, features) {
           map.getCanvas().style.cursor = (!err && features.length) ? 'pointer' : '';
       });
   });

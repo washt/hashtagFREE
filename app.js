@@ -117,6 +117,10 @@ MongoClient.connect(mongoUrl, function(err, db) {
       'education center': {
         lat: -76.3034907981785,
         long: 36.8858513590618
+      },
+      'tap room': {
+        lat: -76.292421858021,
+        long: 36.84654706809202
       }
     };
 
