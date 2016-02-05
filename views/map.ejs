@@ -2,8 +2,22 @@
 <%- include partials/head %>
 
   <body>
-    <div id="events" hidden></div>
+    <div id="events">
+      <% _.each(events, function(event) { %>
+      <div id="event">
+        <input name="name" type="text" value="<%= event.name %>"/>
+        <input name="description" type="text" value="<%= event.description %>"/>
+        <input name="datetime" type="text" value="<%= event.datetime %>"/>
+        <input name="lat" type="text" value="<%= event.location.lat %>"/>
+        <input name="long" type="text" value="<%= event.location.long %>"/>
+      </div>
+      <% }); %>
+    </div>
     <div id="map"></div>
+    <div id="marker-template">
+      <h1 id="title"></h1>
+      <p id="description"></p>
+    </div>
     <!-- <div class="card-container">
       <div class="container-img">
         <img src="/images/pizza.svg">
