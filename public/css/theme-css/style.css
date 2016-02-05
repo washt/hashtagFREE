@@ -387,6 +387,7 @@ body {
 }
 
 .header_logo {
+	width: 10%;
 	float: left;
 	margin: 11px 0px 0px 15px;
 	opacity: 0.8;
@@ -396,16 +397,17 @@ body {
 	opacity: 1;
 }
 
-.header_logo img {
-	width: 25%;
-}
+/*.header_logo img {
+	width: 23%;
+}*/
 
 .map_button,
 .menu_button {
 	width: 65px;
-	height: 65px;
+	height: 45px;
 	position: absolute;
 	top: 0;
+	padding-top: 20px;
 	right: 65px;
 	border-left: 1px solid #e2e2e2;
 	text-align: center;
@@ -475,11 +477,11 @@ body {
 }
 
 .map_button:before {
-    content: "MAP";
+    content: "FIND";
 }
 
 .menu_button:before {
-    content: "MENU";
+    content: "GIVE";
 }
 
 #map{
@@ -515,7 +517,8 @@ body {
 }
 
 .main_div .messages{
-	background: rgba(51,51,51,0.8);
+	border-top-right-radius: 5px;
+	background: rgba(77,198,244,0.8);
 	color: #fff;
 	padding: 10px 20px;
 	height: 55px;
@@ -703,6 +706,7 @@ ul.footer-social a.vimeo:hover {
 }
 
 .nav_container {
+	opacity: 0.95;
 	position: fixed;
 	top: 65px;
 	right: 0;
@@ -993,8 +997,9 @@ ul.footer-social a.vimeo:hover {
 	    		transform: translateY(0);
 	}
 
-	.nav_about_close{
-		height: 65px;
+	.nav_about_close {
+		padding-top: 20px;
+		height: 45px;
 		width: 65px;
 		cursor: pointer;
 		position: absolute;
