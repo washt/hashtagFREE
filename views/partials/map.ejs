@@ -1,11 +1,11 @@
 <div id="events">
   <% _.each(events, function(event) { %>
     <div id="event" hidden>
-      <input name="name" type="text" value="<%= event.name %>" />
-      <input name="description" type="text" value="<%= event.description %>" />
-      <input name="datetime" type="text" value="<%= event.datetime %>" />
-      <input name="lat" type="text" value="<%= event.location.lat %>" />
-      <input name="long" type="text" value="<%= event.location.long %>" />
+      <input name="name" type="text" value="<%= event.name || '' %>" />
+      <input name="description" type="text" value="<%= event.description || '' %>" />
+      <input name="datetime" type="text" value="<%= event.datetime || '' %>" />
+      <input name="lat" type="text" value="<%= event.location.lat || ''%>" />
+      <input name="long" type="text" value="<%= event.location.long || ''%>" />
     </div>
     <% }); %>
 </div>
