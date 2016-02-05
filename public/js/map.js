@@ -18,7 +18,8 @@ $(document).ready(function() {
 	});
 
 
-  mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zaHVhamhhcnJpcyIsImEiOiJjaWs4aXY4OTUwMnM4dTNrdzc0NDI3Mm1yIn0.2qKe8jSYKFlGRiApo2ZiVw';
+  // mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zaHVhamhhcnJpcyIsImEiOiJjaWs4aXY4OTUwMnM4dTNrdzc0NDI3Mm1yIn0.2qKe8jSYKFlGRiApo2ZiVw';
+  mapboxgl.accessToken = 'pk.eyJ1IjoiamlhbmNhcmxvIiwiYSI6ImNpazhram1taTAzMGp1aGt3NWJ6MjQ4OTQifQ.h-EKdAtNeq0bwfdf4O_cwA';
   // var map = new mapboxgl.Map({
   //     container: 'map', // container id
   //     style: 'mapbox://styles/joshuajharris/cik8qfu0o00l596kpqfm842yi', //stylesheet location
@@ -31,10 +32,9 @@ var features = [];
   _.templateSettings = {
     interpolate: /\{\{(.+?)\}\}/g
   };
-
   var html = $('body>#marker-template').html();
   $('#events div').each(function(i, event) {
-    var markerTemp = _.template(html);
+  var markerTemp = _.template(html);
     var marker = {
       name: $(event).children('input[name=name]').val(),
       description: $(event).children('input[name=description]').val(),
@@ -65,7 +65,8 @@ var features = [];
   var map = new mapboxgl.Map({
       container: 'map',
       // style: 'mapbox://styles/mapbox/streets-v8',
-      style: 'mapbox://styles/joshuajharris/cik91dyhk000f9fm1aogokton',
+      // style: 'mapbox://styles/joshuajharris/cik91dyhk000f9fm1aogokton',
+      style: 'mapbox://styles/jiancarlo/cik9zskbd00239fm1r8akwpj2',
       // center: [-77.020945, 38.878241],
       center: [-76.305396,36.886563],
       zoom: 18, // starting zoom
@@ -118,4 +119,22 @@ var features = [];
   map.on('click', function(e) {
     console.log(e.lngLat);
   });
+  //
+  // var today = new Date();
+  // var dd = today.getDate();
+  // var mm = today.getMonth()+1; //January is 0!
+  // var yyyy = today.getFullYear();
+  //
+  // if(dd<10) {
+  //     dd='0'+dd
+  // }
+  //
+  // if(mm<10) {
+  //     mm='0'+mm
+  // }
+  //
+  // today = yyyy + '-' + mm+'-'+dd;
+  // console.log(today);
+  // document.getElementById("eventDate").valueAsDate = new Date();
+  // $('#eventDate').val(today);
 });
