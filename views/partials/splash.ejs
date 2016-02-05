@@ -1,8 +1,52 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
 <video autoplay muted poster="/vids/dronePreview.png" id="bgvid" loop>
   <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
 <source src="/vids/droneFootage.mp4" type="video/mp4">
 </video>
-<div class="container-fluid">
-  <h1>#Free</h1>
-  <a class="btn btn-default" href="/map">Find Food</a
+
+<!-- Custom font -->
+<link href='https://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
+
+<style>
+.ab_center
+{
+    height:100px;
+    width:190px;
+    position:absolute;
+    margin:auto;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+h1
+{
+	font-family: 'Luckiest Guy', cursive;
+	color : white;
+	font-size: 50px;
+}
+
+#start
+{
+	border : 5px solid #FFF;
+	border-radius : 15px;
+}
+
+#start:hover
+{
+	background-color : green;
+}
+
+</style>
+
+<a href="/map">
+<div id="start" class="row ab_center">
+  <h1 class="text-center">#Free</h1>
 </div>
+</a>
