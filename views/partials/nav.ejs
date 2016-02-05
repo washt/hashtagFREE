@@ -3,12 +3,12 @@
 	=============================================== -->
 	<div class="nav_container" id="nav_container">
 
-		<a class="nav_about" id="nav_about" title="">
-			<p><span aria-hidden="true" data-icon="&#xe08b;"></span><br/>ABOUT US</p>
-		</a>
-
 		<a class="nav_contact" id="nav_contact" title="">
 			<p><span aria-hidden="true" data-icon="&#x002b;"></span><br/>ADD AN EVENT</p>
+		</a>
+
+		<a class="nav_about" id="nav_about" title="">
+			<p><span aria-hidden="true" data-icon="&#xe08b;"></span><br/>ABOUT US</p>
 		</a>
 
 		<div class="nav_content_container">
@@ -31,10 +31,17 @@
 					<li><p><span aria-hidden="true" data-icon="&#xe01d;"></span> Gris Agency. Direction 1234, The City.</p></li> -->
 				</ul>
 				<form action="#" id="contactform">
-        	<input type="text" name="name" placeholder="Name">
-					<input type="date" name="date" id="date" value="datetime" /><button>NOW!</button>
-					<textarea name="description" cols="35" rows="5" placeholder="Description"></textarea>
-					<button type="submit" value="Create">Create</button>
+        	<input type="text" id="eventName" name="eventName" placeholder="Name">
+					<select id="eventLocation" name="eventLocation">
+						<option value="dragas">Dragas</option>
+						<option value="webb">Webb</option>
+						<option value="kauffman">Kauffman</option>
+					</select>
+					<input type="date" name="eventDate" id="eventDate" placeholder="Date" />
+					<input type="time" name="eventTime" id="eventTime" placeholder="Time" />
+					<button>NOW!</button>
+					<textarea id="eventDescription" name="eventDescription" cols="35" rows="5" placeholder="Description"></textarea>
+					<button id="create" type="submit" value="Create">Create</button>
 				</form>
 			<p class="success-message-2"></p>
             <p class="error-message-2"></p>
