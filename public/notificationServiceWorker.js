@@ -6,8 +6,8 @@ self.addEventListener('push', function(event) {
   var title = 'Push message';
 
   event.waitUntil(
-    self.registration.showNotification('# Free', {
-      'body': 'New Free Stuff',
+    self.registration.showNotification('#Free', {
+      'body': 'Check out the free food!!!',
       'icon': 'images/pizza.png'
     }));
 });
