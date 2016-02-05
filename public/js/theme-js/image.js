@@ -32,7 +32,7 @@ jQuery(function($){
 		thumb_links				:	1,			// Individual thumb links for each slide
 		thumbnail_navigation    :   0,			// Thumbnail navigation
 		slides 					:  	[			// Slideshow Images
-										{image : 'http://placehold.it/1280x720', title : 'Gris - Creative Coming Soon Template'},
+										{image : 'https://placehold.it/1280x720', title : 'Gris - Creative Coming Soon Template'},
 									],
 										
 		// Theme Options			   

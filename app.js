@@ -92,4 +92,23 @@ MongoClient.connect(mongoUrl, function(err, db) {
       );
     });
   }
+
+  function buildingToCoords(buildingName) {
+    var buildings = {
+      'dragas' : {
+        lat: 36.887468,
+        long:-76.303726
+      },
+      'webb' : {
+        lat: 36.886534,
+        long: -76.306525
+      },
+      'kaufman' : {
+        lat: 36.885824,
+        long: -76.305077
+      }
+    };
+
+    return buildings[buildingName] || null;
+  }
 });
