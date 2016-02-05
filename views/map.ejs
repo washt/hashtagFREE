@@ -2,9 +2,10 @@
 <%- include partials/head %>
 
   <body>
+    <%- include partials/modal %>
     <div id="events">
       <% _.each(events, function(event) { %>
-      <div id="event">
+      <div id="event" hidden>
         <input name="name" type="text" value="<%= event.name %>"/>
         <input name="description" type="text" value="<%= event.description %>"/>
         <input name="datetime" type="text" value="<%= event.datetime %>"/>
@@ -14,17 +15,17 @@
       <% }); %>
     </div>
     <div id="map"></div>
-    <div id="marker-template">
-      <h1 id="title"></h1>
-      <p id="description"></p>
+    <div id="marker-template" hidden>
+      <h1 id="name">{{ name }}</h1>
+      <p id="description">{{ description }}</p>
     </div>
-    <!-- <div class="card-container">
+    <!-- <div id="marker-template" class="card-container" hidden>
       <div class="container-img">
         <img src="/images/pizza.svg">
       </div>
 
       <div class="arrow_box container" id="info">
-        <h1>Title</h1>
+        <h1>{{ name }}</h1>
         <ul class="list-unstyled">
           <li>
             <span class="glyphicon glyphicon-time"></span> Time
@@ -32,7 +33,7 @@
           <li>
             <span class="glyphicon glyphicon-map-marker"></span> Location
           </li>
-          <p>Description</p>
+          <p>{{description}}</p>
           <button class="btn btn-default" id="hashtag" type="submit">#tags</button>
       </div>
     </div> -->
