@@ -13,19 +13,30 @@ $(document).ready(function() {
   // });
 
 var features = [];
+  _.templateSettings = {
+    interpolate: /\{\{(.+?)\}\}/g
+  };
 
+  var html = $('body>#marker-template').html();
+  var markerTemp = _.template(html);
   $('#event').each(function(i, event) {
-    var lat = $(event).children('input[name=lat]').val();
-    var long = $(event).children('input[name=long]').val();
+    var marker = {
+      name: $(event).children('input[name=name]').val(),
+      description: $(event).children('input[name=description]').val(),
+      lat: $(event).children('input[name=lat]').val(),
+      long: $(event).children('input[name=long]').val()
+    };
+    // var lat = $(event).children('input[name=lat]').val();
+    // var long = $(event).children('input[name=long]').val();
     var feature = {
         "type": "Feature",
         "properties": {
-            "description": "<div class=\"marker-title\">Make it Mount Pleasant</div><p><a href=\"http://www.mtpleasantdc.com/makeitmtpleasant\" target=\"_blank\" title=\"Opens in a new window\">Make it Mount Pleasant</a> is a handmade and vintage market and afternoon of live entertainment and kids activities. 12:00-6:00 p.m.</p>",
+            "description": markerTemp(marker),
             "marker-symbol": "restaurant"
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [lat, long]
+            "coordinates": [marker.lat, marker.long]
         }
     };
     features.push(feature);
