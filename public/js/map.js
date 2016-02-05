@@ -33,8 +33,8 @@ var features = [];
   };
 
   var html = $('body>#marker-template').html();
-  var markerTemp = _.template(html);
-  $('#event').each(function(i, event) {
+  $('#events div').each(function(i, event) {
+    var markerTemp = _.template(html);
     var marker = {
       name: $(event).children('input[name=name]').val(),
       description: $(event).children('input[name=description]').val(),

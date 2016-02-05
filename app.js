@@ -101,6 +101,22 @@ MongoClient.connect(mongoUrl, function(err, db) {
       'kaufman' : {
         long: 36.885824,
         lat: -76.305077
+      },
+      'constant hall' : {
+        lat: -76.30513370895189,
+        long: 36.88732219016376
+      },
+      'ted constant center': {
+        lat: -76.3013333692456,
+        long: 36.88426003750257
+      },
+      'visual arts center': {
+        lat: -76.3044386177319,
+        long: 36.88738551271044
+      },
+      'education center': {
+        lat: -76.3034907981785,
+        long: 36.8858513590618
       }
     };
 
