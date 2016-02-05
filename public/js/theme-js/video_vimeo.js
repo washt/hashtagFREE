@@ -12,7 +12,7 @@ if( !device.tablet() && !device.mobile() ) {
 			    
 			return this.each(function() {
 				var that = $(this);
-				that.append('<div id="fullscreen-wrap"><iframe id="player1" src="http://player.vimeo.com/video/'+settings.videoId+'?autoplay=1&loop=1&api=1&player_id=player1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>');
+				that.append('<div id="fullscreen-wrap"><iframe id="player1" src="https://player.vimeo.com/video/'+settings.videoId+'?autoplay=1&loop=1&api=1&player_id=player1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>');
 				
 				function onMessageReceived(e) {
 				    var data = JSON.parse(e.data);

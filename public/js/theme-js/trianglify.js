@@ -100,12 +100,12 @@ Trianglify.Pattern.prototype.generateSVG = function () {
     var options = this.options;
     var color = Trianglify.Pattern.gradient_2d(options.x_gradient, options.y_gradient, this.width, this.height);
 
-    var elem = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    var elem = document.createElementNS("https://www.w3.org/2000/svg", "svg");
     var svg = d3.select(elem);
 
     svg.attr("width", this.width);
     svg.attr("height", this.height);
-    svg.attr('xmlns', 'http://www.w3.org/2000/svg');
+    svg.attr('xmlns', 'https://www.w3.org/2000/svg');
     var group = svg.append("g");
 
     if (options.noiseIntensity > 0.01) {

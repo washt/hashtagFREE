@@ -3,7 +3,7 @@ if( !device.tablet() && !device.mobile() ) {
 	jQuery(function(){
 	
 		if (self.location.href == top.location.href){
-		    var logo=$("<a href='http://pupunzi.com/#mb.components/components.html' style='position:absolute;top:0;z-index:1000'><img id='logo' border='0' src='http://pupunzi.com/images/logo.png' alt='mb.ideas.repository'></a>");
+		    var logo=$("<a href='https://pupunzi.com/#mb.components/components.html' style='position:absolute;top:0;z-index:1000'><img id='logo' border='0' src='https://pupunzi.com/images/logo.png' alt='mb.ideas.repository'></a>");
 		   	$("#wrapper").prepend(logo);
 		    $("#logo").fadeIn();
 	
